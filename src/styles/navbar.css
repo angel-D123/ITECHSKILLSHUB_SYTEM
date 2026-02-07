@@ -1,5 +1,15 @@
 /* =========================
-   BASE NAVBAR
+   GLOBAL FONT INHERIT FIX
+   ========================= */
+
+.navbar,
+.navbar * {
+  font-family: inherit; /* 🔥 use site-wide font */
+  letter-spacing: inherit;
+}
+
+/* =========================
+   BASE NAVBAR (FIXED & CLICKABLE)
    ========================= */
 
 .navbar {
@@ -8,13 +18,16 @@
   left: 0;
   width: 100%;
   height: 70px;
-  z-index: 50;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 0 48px;
+
+  z-index: 9999;
+  pointer-events: auto;
+
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -28,57 +41,112 @@
 }
 
 /* =========================
-   SCROLLED STATE (LP2, LP3)
+   SCROLLED STATE
    ========================= */
 
 .navbar-solid {
-  background: #262c4a; /* PURPLE NG OLD NAVBAR MO */
+  background: #262c4a;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* LEFT */
+/* =========================
+   LEFT (LOGO + TITLE)
+   ========================= */
+
 .navbar-left {
   display: flex;
   align-items: center;
+  z-index: 10000;
+}
+
+/* Brand button (Logo + ITechSkillsHub) */
+.navbar-brand-btn {
+  background: none;
+  border: none;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
   gap: 10px;
+
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .navbar-logo {
   width: 36px;
+  display: block;
 }
 
 .navbar-title {
   color: #ffffff;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 600; /* same hierarchy as site title */
+  white-space: nowrap;
 }
 
-/* CENTER */
+/* =========================
+   CENTER (NAV LINKS)
+   ========================= */
+
 .navbar-center {
   display: flex;
   gap: 28px;
+  z-index: 10000;
 }
 
+/* Button-style link (Home) */
+.nav-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Normal links */
 .navbar-center a {
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
-/* RIGHT */
+/* Hover */
+.navbar-center a:hover,
+.nav-link-btn:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   RIGHT (LOGIN ADMIN)
+   ========================= */
+
 .login-btn {
   background: #ffffff;
   color: #1f2340;
   border: none;
   padding: 7px 18px;
   border-radius: 999px;
+
   font-size: 13px;
   font-weight: 600;
+
   cursor: pointer;
+  pointer-events: auto;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 900px) {
   .navbar-center {
     display: none;

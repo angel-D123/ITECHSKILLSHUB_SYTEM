@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import logo from "../assets/Logo1.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,25 +17,41 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 🔥 FORCE SCROLL TO TOP EVEN IF SAME ROUTE
+  const goHome = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <nav className={`navbar ${scrolled ? "navbar-solid" : "navbar-transparent"}`}>
+      
+      {/* LOGO + TITLE */}
       <div className="navbar-left">
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        <button className="navbar-brand-btn" onClick={goHome}>
           <img src={logo} alt="ITechSkillsHub Logo" className="navbar-logo" />
           <span className="navbar-title">ITechSkillsHub</span>
-        </Link>
+        </button>
       </div>
 
+      {/* CENTER */}
       <div className="navbar-center">
-        <Link to="/">Home</Link>
+        <button className="nav-link-btn" onClick={goHome}>
+          Home
+        </button>
         <a href="#about">About</a>
         <Link to="/courses">Courses</Link>
         <a href="#resources">Resources ▾</a>
       </div>
 
-      <Link to="/auth">
-        <button className="login-btn">Login</button>
-      </Link>
+      {/* RIGHT */}
+      <button className="login-btn">Login Admin</button>
     </nav>
   );
 };

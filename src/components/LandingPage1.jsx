@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/landingPage1.css";
 import heroImg from "../assets/Landing1.png";
 
 const LandingPage1 = () => {
   const rafRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let lastScrollY = 0;
@@ -62,7 +64,10 @@ const LandingPage1 = () => {
           </p>
 
           <div className="landing-buttons">
-            <button className="btn-google">
+            <button
+              className="btn-google"
+              onClick={() => navigate("/auth")}
+            >
               <svg viewBox="0 0 18 18">
                 <path d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.84 2.08-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.87 2.7-6.62z" fill="#4285F4"/>
                 <path d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.9-2.26c-.81.54-1.84.86-3.06.86-2.34 0-4.32-1.58-5.03-3.71H.96v2.33C2.44 15.98 5.48 18 9 18z" fill="#34A853"/>
