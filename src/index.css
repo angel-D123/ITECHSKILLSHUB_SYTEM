@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-main: #262c4a;
+  --orange-main: #ff7a18;
+}
+
+body {
+  background: #ffffff;
+  min-height: 100vh;
+  font-family: 'Sora', sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-content {
+  isolation: isolate;
+}

@@ -1,0 +1,471 @@
+/* =========================
+   LANDING PAGE 1 – FULLY RESPONSIVE
+   ========================= */
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 1;
+}
+
+/* =========================
+   SUBTLE FRAME (DARK LINE)
+   ========================= */
+
+.landing-inner {
+  position: relative;
+  z-index: 2;
+
+  width: calc(100% - 160px);
+  height: calc(100% - 160px);
+  margin: 80px auto;
+
+  padding: 65px 80px;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(35, 40, 71, 0.12);
+  border-radius: 1px;
+  padding-bottom: 140px;
+}
+
+/* =========================
+   CONTENT WITH SMOOTH TRANSITION
+   ========================= */
+
+.landing-content {
+  max-width: 520px;
+  color: #ffffff;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  will-change: opacity, transform;
+}
+
+.landing-content h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.landing-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 28px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.landing-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px; /* mas mataas */
+}
+/* GOOGLE BUTTON */
+.btn-google {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 20px; /* paliit */
+  font-size: 13px;    /* paliit text */
+  font-weight: 600;
+
+  background: #ffffff;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+
+.btn-google:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-google svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* OLD BUTTONS (Keep for backwards compatibility) */
+.btn-primary,
+.btn-secondary {
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ff7a18;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #e66910;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 122, 24, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   STRONG BOTTOM FADE (UPWARD)
+   ========================= */
+
+.landing::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 420px;
+
+  background: linear-gradient(
+    to top,
+    rgba(20, 28, 60, 0.92) 25%,
+    rgba(20, 28, 60, 0.75) 45%,
+    rgba(20, 28, 60, 0.5) 65%,
+    rgba(20, 28, 60, 0.25) 82%,
+    rgba(20, 28, 60, 0.1) 92%,
+    rgba(20, 28, 60, 0) 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Extra Large Screens (1440px+) */
+@media (min-width: 1440px) {
+  .landing-content h1 {
+    font-size: 72px;
+  }
+
+  .landing-content p {
+    font-size: 16px;
+  }
+}
+
+/* Large Screens (1200px - 1439px) */
+@media (max-width: 1439px) {
+  .landing-inner {
+    width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    margin: 70px auto;
+    padding: 60px 70px;
+  }
+
+  .landing-content h1 {
+    font-size: 60px;
+  }
+}
+
+/* Medium-Large Screens (1024px - 1199px) */
+@media (max-width: 1199px) {
+  .landing-inner {
+    width: calc(100% - 120px);
+    height: calc(100% - 120px);
+    margin: 60px auto;
+    padding: 50px 60px;
+  }
+
+  .landing-content h1 {
+    font-size: 56px;
+  }
+
+  .landing-content p {
+    font-size: 14px;
+  }
+}
+
+/* Medium Screens (768px - 1023px) - Tablets */
+@media (max-width: 1023px) {
+  .landing-inner {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    margin: 50px auto;
+    padding: 40px 50px;
+  }
+
+  .landing-content {
+    max-width: 460px;
+  }
+
+  .landing-content h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .landing-content p {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .landing-buttons {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .btn-google {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+}
+
+/* Small-Medium Screens (640px - 767px) - Large Phones */
+@media (max-width: 767px) {
+  .landing {
+    height: 100vh;
+    background-position: center center;
+  }
+
+  .landing-inner {
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    margin: 30px auto;
+    padding: 30px 35px;
+  }
+
+  .landing-content {
+    max-width: 100%;
+  }
+
+  .landing-content h1 {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .landing-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .landing-buttons {
+    gap: 10px;
+  }
+
+  .btn-google {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .landing::after {
+    height: 500px;
+  }
+}
+
+/* Small Screens (480px - 639px) - Standard Phones */
+@media (max-width: 639px) {
+  .landing-inner {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 25px 30px;
+  }
+
+  .landing-content h1 {
+    font-size: 36px;
+  }
+
+  .landing-content p {
+    font-size: 12px;
+  }
+
+  .btn-google {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 7px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Screens (375px - 479px) - Small Phones */
+@media (max-width: 479px) {
+  .landing-inner {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    margin: 15px auto;
+    padding: 20px 25px;
+    border: 1px solid rgba(35, 40, 71, 0.08);
+  }
+
+  .landing-content h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .landing-content p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .btn-google {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .btn-google svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .landing-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px 16px;
+  }
+
+  .landing::after {
+    height: 400px;
+  }
+}
+
+/* Very Small Screens (320px - 374px) - Smallest Phones */
+@media (max-width: 374px) {
+  .landing-inner {
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    margin: 12px auto;
+    padding: 16px 20px;
+  }
+
+  .landing-content h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .landing-content p {
+    font-size: 11px;
+  }
+
+  .btn-google {
+    padding: 5px 14px;
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .btn-google svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 9px 14px;
+    font-size: 11px;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .landing {
+    height: 100vh;
+  }
+
+  .landing-inner {
+    margin: 15px auto;
+    padding: 20px 30px;
+    height: calc(100% - 30px);
+  }
+
+  .landing-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .landing-content p {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+
+  .btn-google {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .landing-buttons {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+}
+/* =========================
+   SCROLL-BASED TEXT EFFECT
+   ========================= */
+
+.landing-content {
+  opacity: calc(1 - (var(--scroll-progress) * 1.2));
+  transform: translateY(
+      calc(var(--scroll-progress) * -40px)
+    )
+    scale(
+      calc(1 - (var(--scroll-progress) * 0.12))
+    );
+
+  transition: opacity 0.15s linear, transform 0.15s linear;
+  will-change: opacity, transform;
+}
