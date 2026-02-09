@@ -37,7 +37,9 @@
   color: #ffffff;
 
   max-width: 900px;
+  width: 100%;
   padding: 2rem;
+  margin: 0 auto; /* 🔥 Centers the content container */
 }
 
 /* BADGE */
@@ -60,7 +62,6 @@
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.15;
-
   margin-bottom: 1.2rem;
 }
 
@@ -74,10 +75,15 @@
   opacity: 0.9;
 }
 
-/* CTA BUTTON */
-.hero-btn {
-  padding: 0.8rem 2rem;
+/* ===============================
+   CTA BUTTON — SHINE EFFECT
+================================ */
 
+.hero-btn {
+  position: relative;
+  overflow: hidden; /* 🔥 required for shine */
+
+  padding: 0.8rem 2rem;
   font-size: 0.9rem;
   font-weight: 700;
 
@@ -91,9 +97,35 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: left 0.6s ease;
+}
+
+.hero-btn:hover::before {
+  left: 120%;
+}
+
 .hero-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 122, 24, 0.45);
+  box-shadow: 0 12px 32px rgba(255, 122, 24, 0.45);
+}
+
+.hero-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* ===============================
@@ -149,59 +181,4 @@
   .hero-content p {
     font-size: 0.9rem;
   }
-}
-
-
-
-/* ===============================
-   CTA BUTTON – SHINE EFFECT
-================================ */
-
-.hero-btn {
-  position: relative;
-  overflow: hidden; /* 🔥 required for shine */
-
-  padding: 0.8rem 2rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-
-  background: linear-gradient(135deg, #ff7a18, #ff9f43);
-  color: #ffffff;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;
-  height: 100%;
-
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-
-  transition: left 0.6s ease;
-}
-
-.hero-btn:hover::before {
-  left: 120%;
-}
-
-.hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(255, 122, 24, 0.45);
-}
-
-.hero-btn:active {
-  transform: translateY(0) scale(0.98);
 }

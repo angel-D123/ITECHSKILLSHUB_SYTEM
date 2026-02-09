@@ -3,7 +3,7 @@ import '../styles/Courses2.css';
 
 const Courses2 = () => {
   useEffect(() => {
-    const cards = document.querySelectorAll('.feature-card');
+    const cards = document.querySelectorAll('.feature-card, .support-card');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,16 +53,22 @@ const Courses2 = () => {
     },
   ];
 
+  const supportFeatures = [
+    '100% free access to all courses',
+    'TESDA-aligned curriculum',
+    'Practice quizzes and assessments',
+    'Certificate upon completion',
+  ];
+
   return (
     <section className="courses2-section">
       <div className="courses2-container">
-        {/* Header */}
+        {/* What Sets Us Apart Section */}
         <div className="courses2-header">
           <span className="section-badge">Why Our Courses</span>
           <h2>What Sets Us Apart</h2>
         </div>
 
-        {/* Features Grid */}
         <div className="features-grid">
           {features.map((feature, index) => (
             <div 
@@ -77,6 +83,39 @@ const Courses2 = () => {
               <p>{feature.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Learning Support Section */}
+        <div className="support-section">
+          <div className="support-card">
+            <div className="support-content">
+              <h2>Need Learning Support?</h2>
+              <p className="support-description">
+                All our courses are completely free for students. We're here to help you succeed with comprehensive support resources.
+              </p>
+              
+              <ul className="support-features">
+                {supportFeatures.map((feature, index) => (
+                  <li key={index}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="support-cta">
+              <button className="quiz-btn">
+                Practice with Quizzes
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+              </button>
+              <p className="cta-description">Test your knowledge • Track your progress</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

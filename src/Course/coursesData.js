@@ -18,6 +18,7 @@ const coursesData = [
     lessons: "16 Lessons",
     badge: "Bestseller",
     free: true,
+    route: "/course/css-ncii", // Added route property
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const coursesData = [
     modules: "3 Modules",
     lessons: "8 Lessons",
     free: true,
+    route: "/course/pc-hardware", // Added route property (for future use)
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ const coursesData = [
     lessons: "6 Lessons",
     badge: "New",
     free: true,
+    route: "/course/network-setup", // Added route property (for future use)
   },
   {
     id: 4,
@@ -61,6 +64,7 @@ const coursesData = [
     modules: "3 Modules",
     lessons: "6 Lessons",
     free: true,
+    route: "/course/os-installation", // Added route property (for future use)
   },
 ];
 

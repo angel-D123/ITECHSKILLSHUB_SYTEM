@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Courses1.css";
 import coursesData from "./coursesData";
 
 const Courses1 = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const cards = document.querySelectorAll(".course-box");
 
@@ -20,6 +23,17 @@ const Courses1 = () => {
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
   }, []);
+
+  const handleStartLearning = (courseId) => {
+    // Navigate based on course ID
+    if (courseId === 1) {
+      navigate("/course/css-ncii");
+    }
+    // Add more navigation logic for other courses here
+    // if (courseId === 2) {
+    //   navigate("/course/pc-hardware");
+    // }
+  };
 
   return (
     <section className="courses-section">
@@ -67,8 +81,11 @@ const Courses1 = () => {
               </div>
 
               <div className="course-footer">
-                <span className="free-access"> Free Access</span>
-                <button className="course-btn">
+                <span className="free-access">Free Access</span>
+                <button 
+                  className="course-btn"
+                  onClick={() => handleStartLearning(course.id)}
+                >
                   Start Learning →
                 </button>
               </div>

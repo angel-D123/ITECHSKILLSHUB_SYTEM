@@ -19,35 +19,30 @@ function App() {
       {!hideLayout && <Navbar />}
 
       <Routes>
+        {/* Home */}
         <Route
           path="/"
           element={
             <>
-              {/* 🔴 FADE / SCROLL ZONE */}
-              <div className="page-content">
-                <LandingPage1 />
-                <LandingPage2 />
-                <LandingPage3 />
-              </div>
-
-              {/* 🟢 SAFE ZONE */}
-              {!hideLayout && <Footer />}
+              <LandingPage1 />
+              <LandingPage2 />
+              <LandingPage3 />
             </>
           }
         />
 
+        {/* Auth */}
         <Route path="/auth" element={<AuthPage />} />
 
+        {/* Courses - Fixed: Single route instead of duplicate */}
         <Route
-          path="/courses"
-          element={
-            <>
-              <Course />
-              {!hideLayout && <Footer />}
-            </>
-          }
+          path="/course/*"
+          element={<Course />}
         />
       </Routes>
+
+      {/* Footer - Placed outside Routes so it shows on all pages except /auth */}
+      {!hideLayout && <Footer />}
     </>
   );
 }
