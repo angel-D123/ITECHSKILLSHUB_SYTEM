@@ -1,0 +1,321 @@
+/* ===============================
+   INSTRUCTOR LOGIN PAGE
+================================ */
+.instructor-login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #262c4a, #1a2035);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.instructor-login-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.instructor-login-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.instructor-login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.instructor-badge {
+  display: inline-block;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.instructor-login-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.instructor-login-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Google Sign In Button */
+.google-signin-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.google-signin-btn:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-signin-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+  padding: 0 16px;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Email Login Toggle Button */
+.email-login-toggle-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email-login-toggle-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Demo Note */
+.demo-note {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.demo-note p {
+  margin: 0;
+  font-size: 13px;
+  color: #166534;
+  font-weight: 500;
+}
+
+.demo-small {
+  margin-top: 6px !important;
+  font-size: 12px !important;
+  color: #15803d !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+/* Email Form */
+.instructor-email-form {
+  margin-bottom: 20px;
+}
+
+.instructor-form-group {
+  margin-bottom: 20px;
+}
+
+.instructor-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.instructor-form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.instructor-form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Submit Button */
+.instructor-submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.instructor-submit-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.instructor-submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Back Button */
+.back-to-google-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: transparent;
+  color: #6b7280;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-to-google-btn:hover {
+  background: #f9fafb;
+  color: #374151;
+}
+
+/* Error Message */
+.instructor-error-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.instructor-error-message svg {
+  flex-shrink: 0;
+}
+
+/* Spinner */
+.instructor-spinner {
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer */
+.instructor-login-footer {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 24px;
+}
+
+.instructor-footer-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.instructor-footer-link:hover {
+  color: #3b82f6;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .instructor-login-card {
+    padding: 36px 28px;
+  }
+
+  .instructor-login-title {
+    font-size: 28px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .instructor-login-page {
+    padding: 16px;
+  }
+
+  .instructor-login-card {
+    padding: 32px 24px;
+  }
+
+  .instructor-login-title {
+    font-size: 24px;
+  }
+
+  .google-signin-btn,
+  .instructor-submit-btn {
+    font-size: 14px;
+  }
+}

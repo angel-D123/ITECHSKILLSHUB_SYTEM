@@ -1,0 +1,276 @@
+/* ===============================
+   GAMES PAGE
+================================ */
+.games-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding-top: 70px;
+}
+
+/* Hero Section */
+.games-hero {
+  background: linear-gradient(135deg, #262c4a, #1a2035);
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.games-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.games-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.games-icon {
+  font-size: 56px;
+}
+
+.games-hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Main Container */
+.games-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Category Filters */
+.category-filters {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.category-icon {
+  font-size: 20px;
+}
+
+/* Stats Banner */
+.stats-banner {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: #ffffff;
+  padding: 24px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Games Grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.game-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.game-image {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.game-emoji {
+  font-size: 80px;
+}
+
+.difficulty-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.game-content {
+  padding: 24px;
+}
+
+.game-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.game-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.game-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.game-duration,
+.game-category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.game-duration svg {
+  color: #3b82f6;
+}
+
+.play-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+  background: #2563eb;
+}
+
+/* Coming Soon */
+.coming-soon-section {
+  background: linear-gradient(135deg, #fef3c7, #fde047);
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.coming-soon-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0 0 12px 0;
+}
+
+.coming-soon-text {
+  font-size: 16px;
+  color: #92400e;
+  margin: 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .games-hero-title {
+    font-size: 36px;
+  }
+
+  .games-icon {
+    font-size: 42px;
+  }
+
+  .games-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .games-container {
+    padding: 40px 16px;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 20px 32px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+}
