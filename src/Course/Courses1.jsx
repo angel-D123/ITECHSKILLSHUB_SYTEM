@@ -28,11 +28,14 @@ const Courses1 = () => {
     // Navigate based on course ID
     if (courseId === 1) {
       navigate("/course/css-ncii");
+    } else if (courseId === 2) {
+      navigate("/course/pc-hardware");
+    } else if (courseId === 3) {
+      navigate("/course/network-setup");
+    } else if (courseId === 4) {
+      navigate("/course/os-installation");
     }
     // Add more navigation logic for other courses here
-    // if (courseId === 2) {
-    //   navigate("/course/pc-hardware");
-    // }
   };
 
   return (

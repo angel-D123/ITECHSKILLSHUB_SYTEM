@@ -26,8 +26,8 @@ const AdminLogin = () => {
 
     // Demo admin credentials
     const adminCredentials = {
-      email: 'admin@techskillshub.com',
-      password: 'admin123'
+      email: 'admin@example.com',
+      password: 'demo_admin_password'
     };
 
     setTimeout(() => {
@@ -63,7 +63,7 @@ const AdminLogin = () => {
           {/* Demo Credentials */}
           <div className="demo-box">
             <p className="demo-label">Demo Admin Credentials:</p>
-            <p className="demo-credential">admin@techskillshub.com / admin123</p>
+            <p className="demo-credential">admin@example.com / demo_admin_password</p>
           </div>
 
           {/* Error Message */}

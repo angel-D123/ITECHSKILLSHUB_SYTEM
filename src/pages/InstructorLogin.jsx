@@ -38,8 +38,8 @@ const InstructorLogin = () => {
 
     // Demo instructor credentials
     const instructorCredentials = {
-      email: 'instructor@techskillshub.com',
-      password: 'instructor123'
+      email: 'instructor@example.com',
+      password: 'demo_instructor_password'
     };
 
     setTimeout(() => {

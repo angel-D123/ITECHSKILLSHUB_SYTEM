@@ -10,13 +10,22 @@ import LandingPage3 from "./components/LandingPage3";
 import AuthPage from "./pages/AuthPage";
 import Course from "./Course/Course";
 
-// ✅ NEW PAGES
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
-import InstructorLogin from "./pages/InstructorLogin";
-import InstructorDashboard from "./pages/InstructorDashboard";
+// Dashboard Layout
+import DashboardLayout from "./layouts/DashboardLayout";
 
-// ✅ RESOURCES PAGES
+// Admin Pages
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminCourses from "./pages/admin/AdminCourses";
+import AdminAssignments from "./pages/admin/AdminAssignments";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminSettings from "./pages/admin/AdminSettings";
+
+// Instructor Pages
+import InstructorLogin from "./pages/InstructorLogin";
+
+// Resources Pages
 import Games from "./pages/Games";
 import Blog from "./pages/Blog";
 
@@ -55,16 +64,26 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/blog" element={<Blog />} />
 
-        {/* ADMIN */}
+        {/* ADMIN LOGIN */}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-        {/* INSTRUCTOR */}
+        {/* ADMIN DASHBOARD ROUTES */}
+        <Route path="/admin" element={<DashboardLayout userRole="admin" />}>
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="courses" element={<AdminCourses />} />
+          <Route path="assignments" element={<AdminAssignments />} />
+          <Route path="analytics" element={<AdminAnalytics />} />
+          <Route path="settings" element={<AdminSettings />} />
+        </Route>
+
+        {/* INSTRUCTOR LOGIN */}
         <Route path="/instructor/login" element={<InstructorLogin />} />
-        <Route
-          path="/instructor/dashboard"
-          element={<InstructorDashboard />}
-        />
+
+        {/* INSTRUCTOR DASHBOARD ROUTES - Phase 4 pa to, placeholder lang */}
+        <Route path="/instructor" element={<DashboardLayout userRole="instructor" />}>
+          <Route path="dashboard" element={<div style={{padding: '50px'}}>Instructor Dashboard - Phase 4</div>} />
+        </Route>
       </Routes>
 
       {!hideLayout && <Footer />}

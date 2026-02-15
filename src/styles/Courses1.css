@@ -41,6 +41,20 @@
 }
 
 /* ===============================
+   IMAGE FIX - FORCE FULL WIDTH
+================================ */
+.course-box .course-image,
+.course-box .course-image img {
+  max-width: 100% !important;
+  border-radius: 0 !important;
+}
+
+.course-box .course-image {
+  min-height: 300px !important;
+}
+
+
+/* ===============================
    SECTION - PROFESSIONAL LAYOUT
 ================================ */
 .courses-section {
@@ -185,16 +199,21 @@
 .course-image {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  width: 100% !important;
+  height: 320px !important;
   background: var(--bg-tertiary);
+  display: block !important;
+  border-radius: 0 !important;
 }
 
 .course-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   filter: brightness(0.95) saturate(1.1);
+  display: block !important;
+  border-radius: 0 !important;
 }
 
 .course-box:hover .course-image img {
@@ -330,35 +349,35 @@
 }
 
 .tag-purple {
-  background: rgba(108, 99, 255, 0.12);
-  color: var(--primary-purple);
-  border: 1px solid rgba(108, 99, 255, 0.2);
+  background: rgba(38, 44, 74, 0.08);
+  color: #262c4a;
+  border: 1px solid rgba(38, 44, 74, 0.15);
 }
 
 .tag-purple:hover {
-  background: rgba(108, 99, 255, 0.2);
+  background: rgba(38, 44, 74, 0.12);
   transform: translateY(-2px);
 }
 
 .tag-orange {
-  background: rgba(255, 107, 53, 0.12);
-  color: var(--primary-orange);
-  border: 1px solid rgba(255, 107, 53, 0.2);
+  background: rgba(38, 44, 74, 0.08);
+  color: #262c4a;
+  border: 1px solid rgba(38, 44, 74, 0.15);
 }
 
 .tag-orange:hover {
-  background: rgba(255, 107, 53, 0.2);
+  background: rgba(38, 44, 74, 0.12);
   transform: translateY(-2px);
 }
 
 .tag-orange-soft {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--success-green);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(38, 44, 74, 0.08);
+  color: #262c4a;
+  border: 1px solid rgba(38, 44, 74, 0.15);
 }
 
 .tag-orange-soft:hover {
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(38, 44, 74, 0.12);
   transform: translateY(-2px);
 }
 
@@ -523,7 +542,8 @@
   }
 
   .course-image {
-    aspect-ratio: 4 / 3;
+    height: 260px !important;
+    width: 100% !important;
   }
 
   .course-badge {
